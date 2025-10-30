@@ -74,7 +74,7 @@ class ArithmeticQuiz:
         canvas = tk.Canvas(self.root, width=600, height=500, bg="#1a1a2e", highlightthickness=0)
         canvas.pack()
         
-        # Progress bar with animation
+        
         progress = (self.question_num / self.total_questions) * 500
         canvas.create_rectangle(50, 30, 550, 50, fill="#2c3e50", outline="#34495e")
         bar = canvas.create_rectangle(50, 30, 50, 50, fill="#00d4ff", outline="")
@@ -85,13 +85,13 @@ class ArithmeticQuiz:
         canvas.create_text(300, 110, text=f"💰 Score: {self.score}/100", 
                           font=("Arial", 18, "bold"), fill="#70b88e")
         
-        # Problem with animation
+        
         canvas.create_rectangle(100, 160, 500, 280, fill="#16213e", outline="#5ab4c6", width=3)
         problem = canvas.create_text(300, 220, text=f"{num1} {operation} {num2} =", 
                                     font=("Arial", 40, "bold"), fill="#ffffff")
         self.animate(canvas, problem, "scale")
         
-        # Entry and button
+        
         self.answer_entry = tk.Entry(self.root, font=("Arial", 24, "bold"), width=12, 
                                     justify="center", bg="#0f3460", fg="#258fa4", 
                                     insertbackground="#1c7587", relief=tk.FLAT, bd=5)
@@ -103,7 +103,7 @@ class ArithmeticQuiz:
                  bg="#6a1209", fg="white", width=18, height=2, relief=tk.FLAT,
                  command=self.checkAnswer).place(x=150, y=400)
         
-        # Particles
+        
         for _ in range(8):
             x, y = random.randint(50, 550), random.randint(100, 500)
             color = random.choice(["#0e6273", "#918852", "#409463"])
@@ -237,4 +237,5 @@ class ArithmeticQuiz:
 if __name__ == "__main__":
     root = tk.Tk()
     app = ArithmeticQuiz(root)
+
     root.mainloop()
