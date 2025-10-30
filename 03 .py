@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+
 import tkinter as tk
 from tkinter import ttk, messagebox, simpledialog
 import pathlib, math
@@ -57,7 +57,7 @@ class App(tk.Tk):
         title.pack(side="left")
         self._animate_title(title)
         
-        # Top buttons (excluding Update)
+        # Top buttons 😎
         for txt, cmd in [("View All", self.view_all), ("View One", self.view_one),
                          ("Highest", self.highest), ("Lowest", self.lowest),
                          ("Sort", self.sort_studs), ("Add", self.add_stud), ("Delete", self.del_stud)]:
@@ -65,7 +65,7 @@ class App(tk.Tk):
             btn.pack(side="left", padx=6)
             self._add_btn_hover(btn)
         
-        # Tree
+        # Tree 🌲
         wrap = tk.Frame(self, bg="#0f0f23")
         wrap.pack(fill="both", expand=True, padx=20, pady=10)
         cols = ("ID", "Name", "CW", "Exam", "Total", "%", "Grade")
@@ -87,7 +87,7 @@ class App(tk.Tk):
         upd_btn.pack(side="right")
         self._add_btn_hover(upd_btn, scale=1.05)
 
-    # Animations
+    # Animations 🌏
     def _fade_in(self, alpha=0):
         if alpha <= 1:
             self.attributes("-alpha", alpha)
@@ -235,4 +235,5 @@ class App(tk.Tk):
         fade()
 
 if __name__ == "__main__":
+
     App().mainloop()
